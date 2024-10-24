@@ -2,4 +2,4 @@
 
 aria2c --conf-path=/app/aria2.conf & 
 
-./cloudreve -c /app/conf.ini
+./cloudreveplus-linux-amd64v2 -c /app/conf.ini
