@@ -13,11 +13,11 @@ RUN wget https://github.com/cloudreve/Cloudreve/files/14327249/cloudreveplus-lin
 RUN chmod 777 /app
 COPY aria2.conf /app/aria2.conf
 # 复制配置文件模板到容器中
-COPY config.ini /app/config.ini
+COPY conf.ini /app/conf.ini
 # 接收从构建过程传递的 SLAVE_SECRET
 ARG SLAVE_SECRET
 # 替换配置文件中的占位符
-RUN sed -i "s|\${SLAVE_SECRET}|${SLAVE_SECRET}|g" /app/config.ini
+RUN sed -i "s|\${SLAVE_SECRET}|${SLAVE_SECRET}|g" /app/conf.ini
 
 RUN chmod +x ./cloudreveplus-linux-amd64v2
 
