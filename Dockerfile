@@ -2,13 +2,13 @@ FROM debian:latest
 
 RUN apt-get update && apt-get install -y \
     wget \
-    tar
+    unzip
 RUN apt-get update && apt-get install -y aria2
 WORKDIR /app
 
-RUN wget https://github.com/cloudreve/Cloudreve/releases/download/3.8.3/cloudreve_3.8.3_linux_amd64.tar.gz \
-    && tar -zxvf cloudreve_3.8.3_linux_amd64.tar.gz \
-    && rm cloudreve_3.8.3_linux_amd64.tar.gz
+RUN wget https://github.com/cloudreve/Cloudreve/files/14327249/cloudreveplus-linux-amd64v2.zip \
+    && unzip cloudreveplus-linux-amd64v2.zip \
+    && rm cloudreveplus-linux-amd64v2.zip
 
 RUN chmod 777 /app
 COPY conf.ini /app/conf.ini
