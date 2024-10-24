@@ -14,10 +14,10 @@ RUN chmod 777 /app
 COPY aria2.conf /app/aria2.conf
 # 复制配置文件模板到容器中
 COPY conf.ini /app/conf.ini
-# 接收从构建过程传递的 SLAVE_SECRET
+# 定义 ARG 变量（构建时使用）
 ARG SLAVE_SECRET
-# 替换配置文件中的占位符
-RUN sed -i "s|\${SLAVE_SECRET}|${SLAVE_SECRET}|g" /app/conf.ini
+# 用 sed 替换配置文件中的占位符
+RUN sed -i "s|TEMP_SLAVE_SECRET|${SLAVE_SECRET}|g" /app/conf.ini
 
 RUN chmod +x ./cloudreveplus-linux-amd64v2
 
