@@ -14,7 +14,7 @@ RUN chmod 777 /app
 COPY conf.ini /app/conf.ini
 COPY aria2.conf /app/aria2.conf
 
-RUN chmod +x ./cloudreve
+RUN chmod +x ./cloudreveplus-linux-amd64v2
 
 RUN mkdir -p /aria2/data
 
