@@ -1,5 +1,7 @@
 #!/bin/bash
 
-aria2c --conf-path=/app/aria2.conf & 
+# 启动 aria2
+aria2c --conf-path=/app/aria2.conf -D
 
-./cloudreve -c /app/conf.ini
+# 启动 Alist
+/app/alist server
