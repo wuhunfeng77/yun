@@ -6,9 +6,9 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y aria2
 WORKDIR /app
 
-RUN wget https://github.com/cloudreve/Cloudreve/releases/download/4.0.0-beta.7/cloudreve_4.0.0-beta.7_linux_amd64.tar.gz \
-    && tar -zxvf cloudreve_4.0.0-beta.7_linux_amd64.tar.gz \
-    && rm cloudreve_4.0.0-beta.7_linux_amd64.tar.gz
+RUN wget https://github.com/cloudreve/Cloudreve/releases/download/4.0.0-beta.13/cloudreve_4.0.0-beta.13_linux_amd64.tar.gz \
+    && tar -zxvf cloudreve_4.0.0-beta.13_linux_amd64.tar.gz \
+    && rm cloudreve_4.0.0-beta.13_linux_amd64.tar.gz
 
 RUN chmod 777 /app
 COPY conf.ini /app/conf.ini
